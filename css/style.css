@@ -371,6 +371,7 @@ nav {
   /* section1 styling */
   .section1 {
     flex-direction: column;
+    height: calc(100vh - 3.5rem); /*imp*/
   }
 
   .image-container {
