@@ -67,6 +67,45 @@ const searchSlide = () => {
   });
 };
 
+const navigationArrows = () => {
+  const section_1_Profiles = document.querySelectorAll('.section1-profile');
+  const leftArrow = document.querySelector(".left-icon");
+  const rightArrow = document.querySelector(".right-icon");
+
+  let counter = 0;
+
+  // right arrow
+  rightArrow.addEventListener("click", () => {
+    counter++;
+    if (counter > section_1_Profiles.length - 1) {
+      counter = 0;
+    }
+    section_1_Profiles.forEach(slide => {
+      slide.classList.remove("section1-profile-active");
+    });
+    section_1_Profiles[counter].classList.add("section1-profile-active");
+  });
+
+
+  // left arrow
+  leftArrow.addEventListener("click", () => {
+    counter--;
+
+    if (counter < 0) {
+      counter = section_1_Profiles.length - 1;
+
+    }
+
+    section_1_Profiles.forEach(slide => {
+      slide.classList.remove("section1-profile-active");
+    });
+    section_1_Profiles[counter].classList.add("section1-profile-active");
+  });
+
+
+}
+
 navSlide();
 searchSlide();
 clearInputValue();
+navigationArrows();
