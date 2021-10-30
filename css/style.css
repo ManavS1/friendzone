@@ -20,8 +20,9 @@
   color: var(--font-color);
 }
 
-/* utility classes */
-/* End of utility classes */
+span {
+  display: inline-block;
+}
 
 body {
   font-family: "Open Sans", sans-serif;
@@ -61,7 +62,7 @@ nav {
   text-transform: uppercase;
 }
 
-.nav-links > li:last-of-type {
+.nav-links>li:last-of-type {
   height: 3.8rem;
   width: 3.8rem;
 }
@@ -74,7 +75,6 @@ nav {
 .nav-links li a {
   transition: var(--transition);
   padding: 0.2rem 0.4rem;
-  display: inline-block;
   margin: 0 1.2rem;
 }
 
@@ -111,13 +111,16 @@ nav {
   opacity: 0;
   transform: translateY(-5rem);
 }
+
 .open .line:nth-child(2) {
   opacity: 1;
 }
+
 .open .line:nth-child(3) {
   opacity: 0;
   transform: translateY(5rem);
 }
+
 /* End of hamburger animation */
 
 /* Search screen styling */
@@ -127,11 +130,12 @@ nav {
   width: 100%;
   top: 4.5rem;
   left: 0;
-  z-index: 50;
+  z-index: 500;
   display: flex;
   align-items: center;
   justify-content: center;
-  transform: translateX(-100%); /*important*/
+  transform: translateX(-100%);
+  /*important*/
   background: var(--secondary-color);
   transition: var(--transition);
 }
@@ -164,9 +168,11 @@ nav {
 .close-search {
   display: none;
 }
+
 /* search screen toggle */
 .search-screen-visible {
-  transform: translateX(0%); /*important*/
+  transform: translateX(0%);
+  /*important*/
 }
 
 /* End of Search screen styling */
@@ -177,10 +183,63 @@ nav {
 .section1 {
   height: calc(100vh - 4.5rem);
   width: 100%;
+  /*imp*/
+  position: relative;
+}
+
+.left-right-icons {
+  font-size: 4rem;
+}
+
+.left-icon {
+  transition: var(--transition);
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  left: 8rem;
+  z-index: 100;
+  transform: translateY(-50%);
+  background: #000;
+  padding: 0.5rem;
+}
+
+.right-icon {
+  transition: var(--transition);
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  right: 8rem;
+  z-index: 100;
+  transform: translateY(-50%);
+  background: #000;
+  padding: 0.5rem;
+}
+
+.right-icon:hover,
+.left-icon:hover {
+  background: rgb(51, 51, 51);
+}
+
+.section1-profile {
+  top: 0;
+  left: 0;
+  position: absolute;
+  width: 100%;
+  height: 100%;
   display: flex;
   align-items: center;
-  justify-content: center; /*imp*/
-  position: relative;
+  justify-content: center;
+  transition: var(--transition);
+  /* transform: scale(0); */
+  opacity: 0;
+}
+
+
+.section1-profile-active {
+  /* toggle class */
+  /* transform: scale(1); */
+  opacity: 1;
+  z-index: 80;
 }
 
 .happy-birthday {
@@ -203,9 +262,11 @@ nav {
   0% {
     opacity: 0;
   }
+
   50% {
     opacity: 1;
   }
+
   100% {
     opacity: 0;
   }
@@ -217,8 +278,10 @@ nav {
   border: 0.3rem solid #f1f1f1;
   border-radius: var(--border-radius);
   transition: var(--transition);
-  margin-right: 5rem; /*imp*/
-  transform: translateY(10%); /*imp*/
+  margin-right: 5rem;
+  /*imp*/
+  transform: translateY(10%);
+  /*imp*/
 }
 
 .image-container:hover {
@@ -237,14 +300,14 @@ nav {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
-  transform: translateY(10%); /*imp*/
+  transform: translateY(10%);
+  /*imp*/
 }
 
 .span-detail {
   font-size: 1.6rem;
   font-weight: 700;
   background: #555273;
-  display: inline-block;
   padding: 0.2rem 1rem;
   border-radius: var(--border-radius);
   margin-bottom: 0.2rem;
@@ -256,17 +319,15 @@ nav {
   font-weight: 700;
 }
 
-.user-links > a > img {
+.user-links>a>img {
   margin-right: 1rem;
   transition: var(--transition);
   /* height: 3rem; */
 }
 
-.user-links > a > img:hover {
+.user-links>a>img:hover {
   transform: scale(1.1);
 }
-
-/* #cf2f87 ins  #3b5998 fac #1dcaff twi   */
 
 /* end of section1 styling */
 
@@ -300,27 +361,31 @@ nav {
     transition: var(--transition);
     overflow: hidden;
     background: var(--secondary-color);
-    z-index: 25;
+    z-index: 200;
   }
 
-  .nav-links > :nth-child(1) {
+  .nav-links> :nth-child(1) {
     order: 2;
   }
-  .nav-links > :nth-child(2) {
+
+  .nav-links> :nth-child(2) {
     order: 3;
   }
-  .nav-links > :nth-child(3) {
+
+  .nav-links> :nth-child(3) {
     order: 4;
   }
-  .nav-links > :nth-child(4) {
+
+  .nav-links> :nth-child(4) {
     order: 1;
   }
 
   .nav-link-visible {
-    transform: translateX(0%); /*toggle class*/
+    transform: translateX(0%);
+    /*toggle class*/
   }
 
-  .nav-links > * {
+  .nav-links>* {
     margin: 1.8rem 0;
     font-size: 2rem;
     font-weight: 700;
@@ -371,7 +436,8 @@ nav {
   /* section1 styling */
   .section1 {
     flex-direction: column;
-    height: calc(100vh - 3.5rem); /*imp*/
+    height: calc(100vh - 3.5rem);
+    /*imp*/
   }
 
   .image-container {
@@ -380,38 +446,83 @@ nav {
     border-radius: 50%;
   }
 
-  .image-container img{
+  .image-container img {
     border-radius: 50%;
   }
 
   .image-container {
-    transform: translateY(21%); 
+    transform: translateY(21%);
     margin: 0;
   }
+
   .profile-detail {
     align-items: center;
     height: 16rem;
     justify-content: space-evenly;
-    transform: translateY(20%); /*imp*/
+    transform: translateY(20%);
+    /*imp*/
   }
 
-  .happy-birthday{
+  .happy-birthday {
     top: 1.5rem;
     font-size: 1.1rem;
   }
 
-  .user-links > a > img {
+  .user-links>a>img {
     margin-right: 0.5rem;
     height: 3rem;
     margin: 0 0.8rem;
   }
-  
-  .user-links > a > img:hover {
+
+  .user-links>a>img:hover {
     transform: scale(1.1);
   }
 
-  .span-detail, .span-detail-value{
+
+  .span-detail {
     font-size: 1.3rem;
   }
+
+  .span-detail-value {
+    font-size: 1.2rem;
+  }
+
+  .section1-profile {
+    flex-direction: column;
+  }
+
+  .left-right-icons {
+    font-size: 2rem;
+  }
+
+  .left-icon {
+    left: 0;
+    background: #000;
+    padding: 0.5rem;
+  }
+
+  .right-icon {
+    right: 0;
+    background: #000;
+    padding: 0.5rem;
+  }
+
+  .right-icon:hover,
+  .left-icon:hover {
+    background: rgb(51, 51, 51);
+  }
   /* end of section1 styling */
+
+  /* section2 styling */
+  .birthday-alert {
+    font-size: 1.2rem;
+    text-align: left;
+    padding-left: 1rem;
+  }
+
+  .birthday-alert #close-alert {
+    padding: 0 0.5rem;
+  }
+
+  /* end of section2 styling */
 }
