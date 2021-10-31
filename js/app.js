@@ -69,6 +69,7 @@ const searchSlide = () => {
 
 const navigationArrows = () => {
   const section_1_Profiles = document.querySelectorAll('.section1-profile');
+  const section_1 = document.querySelectorAll('.section1');
   const leftArrow = document.querySelector(".left-icon");
   const rightArrow = document.querySelector(".right-icon");
 
@@ -76,7 +77,9 @@ const navigationArrows = () => {
 
   // right arrow
   rightArrow.addEventListener("click", () => {
+
     counter++;
+
     if (counter > section_1_Profiles.length - 1) {
       counter = 0;
     }
@@ -89,6 +92,7 @@ const navigationArrows = () => {
 
   // left arrow
   leftArrow.addEventListener("click", () => {
+
     counter--;
 
     if (counter < 0) {
@@ -101,7 +105,6 @@ const navigationArrows = () => {
     });
     section_1_Profiles[counter].classList.add("section1-profile-active");
   });
-
 
 }
 
