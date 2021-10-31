@@ -201,6 +201,7 @@ nav {
   transform: translateY(-50%);
   background: #000;
   padding: 0.5rem;
+  border-radius: 0.2rem;
 }
 
 .right-icon {
@@ -213,6 +214,7 @@ nav {
   transform: translateY(-50%);
   background: #000;
   padding: 0.5rem;
+  border-radius: 0.2rem;
 }
 
 .right-icon:hover,
@@ -497,14 +499,12 @@ nav {
 
   .left-icon {
     left: 0;
-    background: #000;
-    padding: 0.5rem;
+    border-radius: 0;
   }
 
   .right-icon {
     right: 0;
-    background: #000;
-    padding: 0.5rem;
+    border-radius: 0;
   }
 
   .right-icon:hover,
