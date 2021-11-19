@@ -1,2 +1,2 @@
 # friendzone
-Website project to know friend's birth date &amp; upcoming project
+(Visit Here)[https://friendzone007.netlify.app/]
